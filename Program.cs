@@ -1,0 +1,35 @@
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+builder.Services.AddSingleton<RealEstate.API.Services.PropertyService>();
+builder.Services.AddSingleton<RealEstate.API.Services.OwnerService>();
+builder.Services.AddSingleton<RealEstate.API.Services.PropertyImageService>();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+
+// Configurar archivos estáticos para servir imágenes
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "uploads")),
+    RequestPath = "/public/uploads"
+});
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+app.MapGet("/", () => Results.Json(new { ok = true }));
+
+app.Run();
