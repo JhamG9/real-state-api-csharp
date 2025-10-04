@@ -31,7 +31,6 @@ public class PropertyService
         var property = await GetByIdAsync(id);
         if (property == null) return null;
 
-        // Aplicamos solo los cambios que vienen en el body
         property.Name = updateData.Name ?? property.Name;
         property.Address = updateData.Address ?? property.Address;
         property.Price = updateData.Price ?? property.Price;

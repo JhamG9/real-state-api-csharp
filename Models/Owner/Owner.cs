@@ -22,5 +22,4 @@ public class Owner
     [Required]
     public string Birthday { get; set; } = string.Empty;
 
-     public DateTime? DeletedAt { get; set; }
 }

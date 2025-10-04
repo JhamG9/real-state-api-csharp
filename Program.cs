@@ -5,13 +5,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Configure Swagger/OpenAPI
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<RealEstate.API.Services.PropertyService>();
 builder.Services.AddSingleton<RealEstate.API.Services.OwnerService>();
 builder.Services.AddSingleton<RealEstate.API.Services.PropertyImageService>();
+builder.Services.AddSingleton<RealEstate.API.Services.PropertyTraceService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
