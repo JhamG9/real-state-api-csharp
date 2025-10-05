@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "9843b1b0-6108-4d75-9703-1dd74f4d18b7",
+		"name": "Real State",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6051912",
+		"_collection_link": "https://mi-aguila-transportes.postman.co/workspace/Notifications~780b0e3c-8501-4a72-bdbf-5a8134e8db0b/collection/6051912-9843b1b0-6108-4d75-9703-1dd74f4d18b7?action=share&source=collection_link&creator=6051912"
+	},
+	"item": [
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "Get Owners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/owner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Owner By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/owner/68e0396bbe5457597e572224",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"owner",
+								"68e0396bbe5457597e572224"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Owner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Carlos Perez\",\r\n    \"address\": \"Calle 123 #45-67\",\r\n    \"photo\": \"https://miservidor.com/fotos/carlos.jpg\",\r\n    \"birthday\": \"1990-05-15T00:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5189/api/owner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Owner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Carlos A. Perez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5189/api/owner/68e0396bbe5457597e572224",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"owner",
+								"68e0396bbe5457597e572224"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Owner",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/owner/68e0396bbe5457597e572224",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"owner",
+								"68e0396bbe5457597e572224"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "Post Property",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Casa en Bogotá\",\r\n    \"address\": \"Calle 75 #6a-67, Bogotá\",\r\n    \"price\": 350000000,\r\n    \"codeInternal\": \"BOG-005\",\r\n    \"year\": 2025,\r\n    \"idOwner\": \"68e07ca85f19de6809d96ecc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5189/api/property",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/property",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Property By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/property/68e084952745280be5c4448c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"property",
+								"68e084952745280be5c4448c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Property",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"TEST 12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5189/api/property/68e084952745280be5c4448c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"property",
+								"68e084952745280be5c4448c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Property",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/property/68e07d155f19de6809d96ecd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"property",
+								"68e07d155f19de6809d96ecd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "Post Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idProperty",
+									"value": "68e162d7ce469f9a0239365a",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/casa-florids.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5189/api/propertyimage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertyimage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/propertyimage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertyimage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Images Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/propertyimage/byProperty/68e084952745280be5c4448c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertyimage",
+								"byProperty",
+								"68e084952745280be5c4448c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PropertyTrace",
+			"item": [
+				{
+					"name": "Post PropertyTrace",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateSale\": \"2025-01-20T10:30:00Z\",\r\n    \"name\": \"Venta Casa Centro\",\r\n    \"value\": 250000.00,\r\n    \"tax\": 12500.00,\r\n    \"idProperty\": \"68e084952745280be5c4448c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5189/api/propertytrace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertytrace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PropertyTrace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/propertytrace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertytrace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PropertyTrace by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/propertytrace/68e08e4e350b4824533ad16c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertytrace",
+								"68e08e4e350b4824533ad16c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PropertyTrace",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5189/api/propertytrace/68e08e4e350b4824533ad16c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertytrace",
+								"68e08e4e350b4824533ad16c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put PropertyTrace",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\": 275000.00,\r\n    \"tax\": 13750.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5189/api/propertytrace/68e08e4e350b4824533ad16c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5189",
+							"path": [
+								"api",
+								"propertytrace",
+								"68e08e4e350b4824533ad16c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

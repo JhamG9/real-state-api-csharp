@@ -22,6 +22,8 @@ dotnet run seed run
 ```bash
 dotnet run
 ```
+### Postman
+En la raiz hay un archivo llamado ```RealState.postman_collection.json``` importalo en tu postman y empieza a probar las rutas
 
 # Rutas
 ### 🏠 Propiedades (`/api/property`) ⭐ **CON FILTROS**
