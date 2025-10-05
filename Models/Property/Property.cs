@@ -20,14 +20,14 @@ namespace RealEstate.API.Models
         public decimal Price { get; set; }
 
         [Required]
-        public string CodeInternal { get; set; } = null!; // código único interno de la propiedad
+        public string CodeInternal { get; set; } = null!;
 
         [Required]
-        public int Year { get; set; }  // año de construcción
+        public int Year { get; set; }
 
         [Required]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string IdOwner { get; set; } = null!; // relación con el Owner
+        public string IdOwner { get; set; } = null!;
 
         // Lista de imágenes de la propiedad (no se almacena en MongoDB, se llena desde PropertyImageService)
         [BsonIgnore]
