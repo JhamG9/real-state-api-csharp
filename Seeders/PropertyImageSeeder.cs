@@ -32,11 +32,11 @@ public class PropertyImageSeeder : BaseSeeder
         var images = new List<PropertyImage>();
         var imageUrls = new[]
         {
-            "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
-            "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800", 
-            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
-            "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800",
-            "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=800"
+            "/public/uploads/1568605114967-8130f3a36994.jpg",
+            "/public/uploads/153453543534543243-dsf32432.jpg",
+            "/public/uploads/1560518883-ce09059eeffa.jpg",
+            "/public/uploads/1582268611958-ebfd161ef9cf.jpg",
+            "/public/uploads/1574362848149-11496d93a7c7.jpg"
         };
 
         foreach (var property in properties)
