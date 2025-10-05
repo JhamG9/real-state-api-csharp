@@ -21,5 +21,4 @@ public class Owner
 
     [Required]
     public string Birthday { get; set; } = string.Empty;
-
 }

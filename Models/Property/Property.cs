@@ -28,5 +28,17 @@ namespace RealEstate.API.Models
         [Required]
         [BsonRepresentation(BsonType.ObjectId)]
         public string IdOwner { get; set; } = null!; // relación con el Owner
+
+        // Lista de imágenes de la propiedad (no se almacena en MongoDB, se llena desde PropertyImageService)
+        [BsonIgnore]
+        public List<string> Images { get; set; } = new List<string>();
+
+        // Información completa del propietario (no se almacena en MongoDB, se llena desde OwnerService)
+        [BsonIgnore]
+        public Owner? Owner { get; set; }
+
+        // Lista de transacciones/traces de la propiedad (no se almacena en MongoDB, se llena desde PropertyTraceService)
+        [BsonIgnore]
+        public List<PropertyTrace> PropertyTraces { get; set; } = new List<PropertyTrace>();
     }
 }
