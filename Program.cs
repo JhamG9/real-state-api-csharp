@@ -8,6 +8,10 @@ builder.Services.AddOpenApi();
 
 // Configure Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
+
+// Agregar HttpContextAccessor para acceder al contexto HTTP en los servicios
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddSingleton<RealEstate.API.Services.PropertyService>();
 builder.Services.AddSingleton<RealEstate.API.Services.OwnerService>();
 builder.Services.AddSingleton<RealEstate.API.Services.PropertyImageService>();

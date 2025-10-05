@@ -27,7 +27,6 @@ public class PropertyService
         var filterBuilder = Builders<Property>.Filter;
         var mongoFilter = filterBuilder.Empty;
 
-        // Aplicar filtros si se proporcionan
         if (filter != null)
         {
             if (!string.IsNullOrEmpty(filter.Name))
@@ -52,15 +51,13 @@ public class PropertyService
         }
 
         var properties = await _properties.Find(mongoFilter).ToListAsync();
-        
-        // Cargar imágenes, owner y traces para cada propiedad
         foreach (var property in properties)
         {
             await LoadPropertyImagesAsync(property);
             await LoadPropertyOwnerAsync(property);
             await LoadPropertyTracesAsync(property);
         }
-        
+
         return properties;
     }
 
@@ -95,8 +92,7 @@ public class PropertyService
         property.IdOwner = updateData.IdOwner ?? property.IdOwner;
 
         await _properties.ReplaceOneAsync(p => p.IdProperty == id, property);
-        
-        // Cargar imágenes, owner y traces después de actualizar
+
         await LoadPropertyImagesAsync(property);
         await LoadPropertyOwnerAsync(property);
         await LoadPropertyTracesAsync(property);
@@ -106,7 +102,6 @@ public class PropertyService
     public async Task DeleteAsync(string id) =>
         await _properties.DeleteOneAsync(p => p.IdProperty == id);
 
-    // Método privado para cargar las imágenes de una propiedad
     private async Task LoadPropertyImagesAsync(Property property)
     {
         if (property?.IdProperty == null) return;
@@ -115,14 +110,12 @@ public class PropertyService
             .Find(img => img.IdProperty == property.IdProperty && img.Enabled)
             .ToListAsync();
 
-        // Construir URLs completas con dominio
         var baseUrl = GetBaseUrl();
         property.Images = propertyImages
             .Select(img => $"{baseUrl}{img.FilePath}")
             .ToList();
     }
 
-    // Método privado para cargar la información del propietario de una propiedad
     private async Task LoadPropertyOwnerAsync(Property property)
     {
         if (property?.IdOwner == null) return;
@@ -130,7 +123,6 @@ public class PropertyService
         property.Owner = await _ownerService.GetByIdAsync(property.IdOwner);
     }
 
-    // Método privado para cargar las transacciones/traces de una propiedad
     private async Task LoadPropertyTracesAsync(Property property)
     {
         if (property?.IdProperty == null) return;
@@ -138,18 +130,16 @@ public class PropertyService
         property.PropertyTraces = await _propertyTraceService.GetByPropertyAsync(property.IdProperty);
     }
 
-    // Método privado para obtener la URL base del servidor
     private string GetBaseUrl()
     {
         var request = _httpContextAccessor.HttpContext?.Request;
         if (request == null)
         {
-            // Fallback para cuando no hay contexto HTTP (como en tests)
             return "http://localhost:5189";
         }
 
-        var scheme = request.Scheme; // http o https
-        var host = request.Host.Value; // localhost:5189
+        var scheme = request.Scheme;
+        var host = request.Host.Value;
         return $"{scheme}://{host}";
     }
 }
