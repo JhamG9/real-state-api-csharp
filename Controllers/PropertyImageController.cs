@@ -40,7 +40,7 @@ namespace RealEstate.API.Controllers
             {
                 img.IdPropertyImage,
                 img.IdProperty,
-                File = $"{baseUrl}{img.FilePath}", // concatenamos dominio
+                File = $"{baseUrl}{img.FilePath}",
                 img.Enabled
             });
 
@@ -68,7 +68,7 @@ namespace RealEstate.API.Controllers
             var image = new PropertyImage
             {
                 IdProperty = idProperty,
-                FilePath = $"/public/uploads/{fileName}", // ruta relativa para servirla con el middleware
+                FilePath = $"/public/uploads/{fileName}",
                 Enabled = true
             };
 

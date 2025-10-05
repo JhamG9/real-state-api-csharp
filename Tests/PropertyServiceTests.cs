@@ -1,7 +1,5 @@
 using NUnit.Framework;
-using RealEstate.API.Services;
 using RealEstate.API.Models;
-using Microsoft.Extensions.Configuration;
 using Moq;
 
 namespace RealEstate.API.Tests

@@ -13,9 +13,9 @@ cd real-state-api-csharp
 dotnet restore
 ```
 
-3. Ejecuta los tests:
+3. **Ejecuta el seeding** (datos de prueba):
 ```bash
-dotnet test
+dotnet run seed run
 ```
 
 4. Ejecuta la aplicación:
@@ -56,37 +56,7 @@ GET /api/property?minPrice=100000&maxPrice=500000
 # Combinación de filtros
 GET /api/property?name=casa&address=centro&minPrice=200000&maxPrice=800000
 
-# Sin filtros (todas las propiedades)
-GET /api/property
-```
-
-### �👥 Propietarios (`/api/owner`)
-- `GET /api/owner` - Obtener todos los propietarios
-- `GET /api/owner/{id}` - Obtener propietario por ID
-- `POST /api/owner` - Crear nuevo propietario
-- `PUT /api/owner/{id}` - **Actualización parcial** de propietario
-- `DELETE /api/owner/{id}` - Eliminar propietario
-
-### 📸 Imágenes de Propiedades (`/api/propertyimage`)
-- `GET /api/propertyimage` - Obtener todas las imágenes
-- `GET /api/propertyimage/{id}` - Obtener imagen por ID
-- `GET /api/propertyimage/byproperty/{idProperty}` - Obtener imágenes por propiedad
-- `POST /api/propertyimage` - Subir nueva imagen (multipart/form-data)
-- `DELETE /api/propertyimage/{id}` - Eliminar imagen
-- `GET /public/uploads/{filename}` - **Acceso directo a archivos de imagen**
-
-### 📊 Trazabilidad de Propiedades (`/api/propertytrace`)
-- `GET /api/propertytrace` - Obtener todos los registros
-- `GET /api/propertytrace/{id}` - Obtener registro por ID
-- `GET /api/propertytrace/byproperty/{propertyId}` - Obtener por propiedad
-- `POST /api/propertytrace` - Crear nuevo registro
-- `PUT /api/propertytrace/{id}` - **Actualización parcial** ⚡
-- `PATCH /api/propertytrace/{id}` - Reemplazo completo
-- `DELETE /api/propertytrace/{id}` - Eliminar registro
-
-## Configuración
-
-### Prerrequisitos
+### Pre Requisitos
 - .NET 9.0 SDK
 - MongoDB
 
